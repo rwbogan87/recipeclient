@@ -39,6 +39,7 @@ const RecipeCreate = (props) => {
             setRecipeInstructions('');
             setRecipePublic('');
             setChef('');
+            props.fetchRecipes();
             console.log('recipe successfully submitted');
         })
     }

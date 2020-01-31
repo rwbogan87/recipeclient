@@ -1,41 +1,41 @@
 import React, {useState} from 'react';
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import APIURL from '../../helpers/environment';
+import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const RecipeChange = (props) => {
 
-  const [changeName, setChangeName] = useState(props.recipechange.recipeName);
-  const [changeCategory, setChangeCateogry] = useState(props.recipechange.recipeCategory);
-  const [changeIngredients, setChangeIngredients] = useState(props.recipechange.recipeIngredients);
-  const [changeInstructions, setcChangeInstructions] = useState(props.recipechange.recipeInstructions);
-  const [changePublic, setChangePublic] = useState(props.recipechange.recipePublic);
-  const [changeChef, setChangeChef] = useState(props.recipechange.chef);
+  // const [changeName, setChangeName] = useState(recipe.recipeName);
+  // const [changeCategory, setChangeCateogry] = useState(recipe.recipeCategory);
+  // const [changeIngredients, setChangeIngredients] = useState(recipe.recipeIngredients);
+  // const [changeInstructions, setcChangeInstructions] = useState(recipe.recipeInstructions);
+  // const [changePublic, setChangePublic] = useState(recipe.recipePublic);
+  // const [changeChef, setChangeChef] = useState(recipe.chef);
   
-  const recipeChange = (e, recipe) => {
-    e.preventDefault();
-      fetch(`${APIURL}/recipe/update/${props.recipechange.id}`, {
-          method: 'PUT',
-          body: JSON.stringify({
-              recipeName: changeName,
-              recipeCategory: changeCategory,
-              recipeIngredients: changeIngredients,
-              recipeInstructions: changeInstructions,
-              recipePublic: changePublic,
-              chef: changeChef
-          }),
-          headers: new Headers({
-              'Content-Type': 'application/json',
-              'Authorization': props.token
-          })
-        }) .then((res) => {
-          props.fetchRecipes();
-          props.updateOff();
-      })
-  }
+  // const recipeChange = (e, recipe) => {
+  //   e.preventDefault();
+  //     fetch(`${APIURL}/recipe/update/${recipe.id}`, {
+  //         method: 'PUT',
+  //         body: JSON.stringify({
+  //             recipeName: changeName,
+  //             recipeCategory: changeCategory,
+  //             recipeIngredients: changeIngredients,
+  //             recipeInstructions: changeInstructions,
+  //             recipePublic: changePublic,
+  //             chef: changeChef
+  //         }),
+  //         headers: new Headers({
+  //             'Content-Type': 'application/json',
+  //             'Authorization': props.token
+  //         })
+  //       }) .then((res) => res.json())
+  //       .then((changeData) => {
+  //           console.log(changeData);
+  //     })
+  // }
 
   return(
     <div>
-      <Form onSubmit={recipeChange}>
+      <Form>
             <FormGroup>
                 <Label htmlFor="recipename"/>
                 <Input name="recipename" placeholder="Recipe Name" value={changeName} onChange={(e) => setChangeName(e.target.value)}/>
@@ -73,5 +73,27 @@ const RecipeChange = (props) => {
 
 }
 
+const ModalChange = (props) => {
+  
+  const [modal, setModal] = useState(false);
 
-export default RecipeChange;
+  const toggle = () => setModal(!modal);
+
+  return (
+    <div>
+      <Button color="danger" onClick={toggle}> Update A Recipe </Button>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalBody>
+          <RecipeChange token={props.token}/>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={toggle}>Cancel</Button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  );
+}
+
+
+export default ModalChange;

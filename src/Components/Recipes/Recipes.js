@@ -2,6 +2,7 @@ import React, { useState, useEffect, } from 'react';
 import './Recipes.css';
 import RecipeCreate from './Recipe/Recipe';
 import RecipeTable from './Display/RecipeTable';
+// import RecipeChange from './Recipe/Recipechange';
 
 // TRYING TO IMPLEMENT UPDATE FUNCTION
 // import RecipeChange from './Recipe/Recipechange';
@@ -9,8 +10,6 @@ import RecipeTable from './Display/RecipeTable';
 // const [recipes, setRecipes] = useState([]);
 // const [updateActive, setUpdateActive] = useState(false);
 // const [recipeChange, setrecipeChange] = useState({});
-
-
 
 //displays user CRUD options and calls RecipeTable without further auth to list recipes
 const Recipes = (props) => {
