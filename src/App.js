@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Auth from './Components/Auth/Auth';
 import Recipes from './Components/Recipes/Recipes';
@@ -16,9 +17,9 @@ function App() {
   // }, [])
 
   const updateToken = (newToken) => {
-    localStorage.setItem('token', newToken);
-    console.log(newToken);
-    setSessionToken(newToken);
+    localStorage.setItem('token', newToken)
+    // console.log(newToken);
+    setSessionToken(newToken)
   }
 
   const clearToken = () => {
@@ -30,11 +31,16 @@ function App() {
     return sessionToken === '' ? <Auth updateToken={updateToken}/> : <Recipes token={sessionToken}/>
   }
 
+  // const historyview=()=>{
+  //   return sessionToken === '' ? <Auth updateToken={updateToken}/> : <Displayrecipes token={sessionToken}/>
+  // }
+
+
   return (
     <div className="App">
-      <h1>Main Page</h1>
       <Navbar />
       {viewConductor()}
+      <hr/>
     </div>
   );
 }

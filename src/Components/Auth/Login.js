@@ -17,11 +17,11 @@ const Login = (props) => {
                 'Content-Type': 'application/json'
             })
         }).then(
-            (response) => response.json(),
-            (console.log('test point 1')),
+            (response) => response.json()
+            // (console.log('test point 1')),
         ).then((data) => {
             props.updateToken(data.sessionToken);
-            (console.log('test point 2'))
+            (console.log('data.sessiontoken is a success'))
         })
     }
 
@@ -31,11 +31,11 @@ const Login = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email Address</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
+                    <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email" value={email}/>
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
+                    <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
                 </FormGroup>
                 <Button type="submit">Login</Button>
             </Form>

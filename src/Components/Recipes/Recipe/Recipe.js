@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Recipe.css'
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
+//makes a new Recipe inside a form embedded in a modal
 const RecipeCreate = (props) => {
     const [recipeName, setRecipeName] = useState('');
     const [recipeCategory, setRecipeCategory] = useState('');
@@ -9,6 +10,8 @@ const RecipeCreate = (props) => {
     const [recipeInstructions, setRecipeInstructions] = useState('');
     const [recipePublic, setRecipePublic] = useState('');
     const [chef, setChef] = useState('');
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,11 +38,13 @@ const RecipeCreate = (props) => {
             setRecipeInstructions('');
             setRecipePublic('');
             setChef('');
+            console.log('recipe successfully submitted');
         })
     }
 
     return(
         <>
+        <div className="maindiv">
         <h3>Recipe Creation</h3>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
@@ -74,8 +79,31 @@ const RecipeCreate = (props) => {
             </FormGroup>
             <Button type="submit">Click to Submit</Button>
         </Form>
+        </div>
         </>
     )
 }
 
-export default RecipeCreate;
+const ModalCreate = (props) => {
+  
+    const [modal, setModal] = useState(false);
+  
+    const toggle = () => setModal(!modal);
+  
+    return (
+      <div>
+        <Button color="danger" onClick={toggle}> Add a New Recipe! </Button>
+        <Modal isOpen={modal} toggle={toggle}>
+          <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+          <ModalBody>
+              <RecipeCreate token={props.token}/>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+
+export default ModalCreate;
