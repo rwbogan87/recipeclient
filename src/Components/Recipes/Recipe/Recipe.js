@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Recipe.css'
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 //makes a new Recipe inside a form embedded in a modal
 const RecipeCreate = (props) => {
@@ -15,7 +16,7 @@ const RecipeCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/recipe/create', {
+        fetch(`${APIURL}/recipe/create`, {
             method: 'POST',
             body: JSON.stringify({
                 recipeName: recipeName,

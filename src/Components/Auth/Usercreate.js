@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const Usercreate = (props) => {
     const [firstName, setFirstname] = useState('');
@@ -10,7 +11,7 @@ const Usercreate = (props) => {
 let handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
-    fetch("http://localhost:3000/user/create", {
+    fetch(`${APIURL}/user/create`, {
         method: 'POST',
         body: JSON.stringify({
             firstName: firstName,

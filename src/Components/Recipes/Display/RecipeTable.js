@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {CardTitle, CardBody, CardText} from 'reactstrap';
 import './RecipeTable.css';
+import APIURL from '../../../helpers/environment';
 
 //fetches all recipes and displays them in cards over in Recipes.js
 const RecipeTable = (props) => {
@@ -8,7 +9,7 @@ const RecipeTable = (props) => {
     const [recipes, setRecipes] = useState([]);
 
     const fetchRecipes= () => {
-        fetch('http://localhost:3000/recipe',{
+        fetch(`${APIURL}/recipe`,{
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',
