@@ -1,32 +1,28 @@
 import React, { useState, useEffect, } from 'react';
 import './Recipes.css';
-import RecipeCreate from './Recipe/Recipe';
+import ModalCreate from './Recipe/Recipe';
+import Recipechange from './Recipe/Recipechange';
 import RecipeTable from './Display/RecipeTable';
 // import RecipeChange from './Recipe/Recipechange';
 
-// TRYING TO IMPLEMENT UPDATE FUNCTION
-// import RecipeChange from './Recipe/Recipechange';
-
-// const [recipes, setRecipes] = useState([]);
-// const [updateActive, setUpdateActive] = useState(false);
-// const [recipeChange, setrecipeChange] = useState({});
 
 //displays user CRUD options and calls RecipeTable without further auth to list recipes
 const Recipes = (props) => {
     return(
         <div className="splashdiv">
-            <div className="createDiv">
-                <h1>Create a New Recipe</h1>
-                <RecipeCreate token={props.token} />
+                <div className="createDiv">
+                    <h1>Create a New Recipe</h1>
+                    <ModalCreate token={props.token} />
+                <br />
+                    <Recipechange token={props.token} />
+                <br />
+                </div>
             <br />
-                {/* <RecipeChange token={props.token} /> */}
-            </div>
-        <br />
-            <div className="tabledisplay">
-                <h1>Recipes</h1>
-            <br />
-                <RecipeTable token={props.token} />
-            </div>
+                <div className="tabledisplay">
+                    <h1>Recipes</h1>
+                <br />
+                    <RecipeTable token={props.token} />
+                </div>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {CardTitle, CardBody, CardText, Button} from 'reactstrap';
+import {CardTitle, CardBody, CardText} from 'reactstrap';
+import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import './RecipeTable.css';
 import APIURL from '../../../helpers/environment';
 
@@ -8,7 +9,7 @@ const RecipeTable = (props) => {
 
     const [recipes, setRecipes] = useState([]);
 
-    const fetchRecipes= () => {
+    const fetchRecipes = () => {
         fetch(`${APIURL}/recipe`,{
             method: 'GET',
             headers: new Headers ({
@@ -21,6 +22,19 @@ const RecipeTable = (props) => {
         .then(console.log('testpoint 1'))
         .catch(err => console.log(err))
     }
+
+    // const editUpdateRecipe = (recipe) => {
+    //     setRecipeToUpdate(recipe);
+    //     console.log(recipe);
+    // }
+
+    // const updateOn = () => {
+    //     setUpdateActive(true)
+    // }
+
+    // const updateOff = () => {
+    //     setUpdateActive(false)
+    // }
 
     useEffect(() => {
         fetchRecipes();
@@ -37,17 +51,18 @@ const RecipeTable = (props) => {
         }).then(() => fetchRecipes())
     }
 
-
     return recipes.map((recipes) => {
+
+
         return(
             <CardBody key={recipes.id}>
-                <CardTitle>{recipes.id}</CardTitle>
                 <CardTitle>{recipes.recipeName}</CardTitle>
+                <CardText>{recipes.id}</CardText>
                 <CardText>{recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
                 <CardText>{recipes.chef}</CardText>
-                <Button color="blue">Change</Button>
+                {/* <Button color="danger" onClick={() => {props.editUpdateRecipe(recipe); props.updateOn()}}>Delete</Button> */}
                 <Button color="danger" onClick={() => {deleteRecipe(recipes)}}>Delete</Button>
             </CardBody>
         )
