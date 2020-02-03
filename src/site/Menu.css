@@ -1,0 +1,31 @@
+.sidebar-list-styling{
+    background-color: #53565A;
+    color: white;
+}
+
+#root > div > div.menu.container > div.sidebar-list-styling > ul {
+    padding: 0px;
+    margin: 0px;
+}
+    
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar-list a{
+    color: white;
+    padding-left: 5vw;
+    display: inline;
+}
+
+.main {
+    margin: 0px;
+    padding: 0px;
+}
+
+.button {
+    color: black;
+    margin-left: 5em;
+}

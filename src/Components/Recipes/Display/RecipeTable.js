@@ -22,23 +22,9 @@ const RecipeTable = (props) => {
         .then(console.log('testpoint 1'))
         .catch(err => console.log(err))
     }
-
-    // const editUpdateRecipe = (recipe) => {
-    //     setRecipeToUpdate(recipe);
-    //     console.log(recipe);
-    // }
-
-    // const updateOn = () => {
-    //     setUpdateActive(true)
-    // }
-
-    // const updateOff = () => {
-    //     setUpdateActive(false)
-    // }
-
-    useEffect(() => {
-        fetchRecipes();
-    }, [])
+    
+    
+    fetchRecipes();
     
 
     const deleteRecipe = (recipe) => {
@@ -52,8 +38,6 @@ const RecipeTable = (props) => {
     }
 
     return recipes.map((recipes) => {
-
-
         return(
             <CardBody key={recipes.id}>
                 <CardTitle>{recipes.recipeName}</CardTitle>
@@ -62,11 +46,11 @@ const RecipeTable = (props) => {
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
                 <CardText>{recipes.chef}</CardText>
-                {/* <Button color="danger" onClick={() => {props.editUpdateRecipe(recipe); props.updateOn()}}>Delete</Button> */}
                 <Button color="danger" onClick={() => {deleteRecipe(recipes)}}>Delete</Button>
             </CardBody>
         )
     })
+
 }
 
 export default RecipeTable;

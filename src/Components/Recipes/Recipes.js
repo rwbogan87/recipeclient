@@ -11,7 +11,6 @@ const Recipes = (props) => {
     return(
         <div className="splashdiv">
                 <div className="createDiv">
-                    <h1>Create a New Recipe</h1>
                     <ModalCreate token={props.token} />
                 <br />
                     <Recipechange token={props.token} />

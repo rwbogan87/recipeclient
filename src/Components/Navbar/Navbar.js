@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 import './Navbar.css';
+import {
+  Nav,
+  NavItem,
+  Button
+} from 'reactstrap';
 
-
-function Navbar() {
+function Navbar(props) {
     return (
-     <div className="Nav">
-       <nav>
-           Recipe Bible
-       </nav>
-     </div>
+       <Nav color="black">
+          <NavItem>
+          <h1>Recipe Bible</h1>
+          
+          </NavItem>
+       </Nav>
    );
  }
 

@@ -50,7 +50,7 @@ const RecipeCreate = (props) => {
     return(
         <>
         <div className="maindiv">
-        <h3>Recipe Creation</h3>
+        <h3>Update a Recipe</h3>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipeid"/>
