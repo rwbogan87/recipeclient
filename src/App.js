@@ -6,6 +6,7 @@ import Auth from './Components/Auth/Auth';
 import Recipes from './Components/Recipes/Recipes';
 import Navbar from './Components/Navbar/Navbar';
 import Help from './site/Help';
+import Home from './site/Home';
 import Menu from './site/Menu';
 
 function App() {
@@ -26,23 +27,28 @@ function App() {
   }
 
   const clearToken = () => {
-    localStorage.clear();
+    // localStorage.clear();
     setSessionToken('');
   }
 
   const viewConductor=()=>{
-    return sessionToken === '' ? <Help /> && <Auth updateToken={updateToken}/> : <Recipes token={sessionToken}/>
+    return sessionToken === '' ? <Auth updateToken={updateToken}/> : <Recipes token={sessionToken}/>
   }
 
-
+  const welcomeConductor=() => {
+    return sessionToken === '' ? <Help /> : <Home />
+  }
 
 
   return (
     <div className="App">
       <Navbar />
+      <br />
+      {/* {welcomeConductor()} */}
       <Router>
         <Menu clickLogout={clearToken}/>
       </Router>
+      <br />
       {viewConductor()}
       <hr/>
     </div>

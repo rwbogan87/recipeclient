@@ -1,6 +1,5 @@
 .sidebar-list-styling{
-    background-color: #53565A;
-    color: white;
+    background-color: #7d8491;
 }
 
 #root > div > div.menu.container > div.sidebar-list-styling > ul {
@@ -12,12 +11,11 @@
 ul {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .sidebar-list a{
-    color: white;
-    padding-left: 5vw;
-    display: inline;
+    color: black;
 }
 
 .main {
@@ -27,5 +25,6 @@ ul {
 
 .button {
     color: black;
-    margin-left: 5em;
+    margin-bottom: 1em;
+    padding: 0em;
 }

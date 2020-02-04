@@ -22,10 +22,6 @@ const RecipeTable = (props) => {
         .then(console.log('testpoint 1'))
         .catch(err => console.log(err))
     }
-    
-    
-    fetchRecipes();
-    
 
     const deleteRecipe = (recipe) => {
         fetch(`${APIURL}/recipe/${recipe.id}`, {
@@ -37,6 +33,11 @@ const RecipeTable = (props) => {
         }).then(() => fetchRecipes())
     }
 
+    useEffect(() => {
+        console.log('runing use effect')
+        fetchRecipes()
+    }, []);
+
     return recipes.map((recipes) => {
         return(
             <CardBody key={recipes.id}>
@@ -46,7 +47,6 @@ const RecipeTable = (props) => {
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
                 <CardText>{recipes.chef}</CardText>
-                <Button color="danger" onClick={() => {deleteRecipe(recipes)}}>Delete</Button>
             </CardBody>
         )
     })

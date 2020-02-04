@@ -2,8 +2,9 @@
 border-radius: 1em;
 margin-left: 25%;
 margin-top: 2em;
-width: 50%;
-background-color: rgb(146, 117, 160);
-border: 1px solid grey;
+width: 20%;
+color: #574b60;
+background-color: white;
+border: 3px solid black;
 box-shadow: 2px 2px 2px black;
 }
