@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+
 import APIURL from '../../helpers/environment';
 
 const Usercreate = (props) => {
@@ -61,4 +62,29 @@ let handleSubmit = (e) => {
     )
 }
 
-export default Usercreate;
+const ModalCreate = (props) => {
+  
+    const [modal, setModal] = useState(false);
+  
+    const toggle = () => setModal(!modal);
+  
+    return (
+      <div>
+        <Button color="danger" onClick={toggle}> New User </Button>
+        <Modal isOpen={modal} toggle={toggle}>
+          <ModalHeader toggle={toggle}>Create New User</ModalHeader>
+          <ModalBody>
+              <Usercreate token={props.token}/>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+
+export default ModalCreate;
+
+
+

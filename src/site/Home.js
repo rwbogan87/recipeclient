@@ -7,12 +7,12 @@ const Home = () => {
             <div className="homediv">
             </div>
             <div className="titlediv">
-            <h1>Welcome Back!</h1>
+            <h1>Mom and Ryan's Recipes</h1>
             <p>
-                This is open for the both of us to add, update, and remove items after we make an account and log in.
+                Log in to save your favorite recipes and see ones I add too!
             </p>
             <p>
-                I'll be building out other things into this website, for now please add and mess around with anything!
+                I'll be building out other things into this website, break everything!
             </p>
             </div>
         </div>

@@ -101,7 +101,7 @@ const ModalCreate = (props) => {
   
     return (
       <div>
-        <Button color="danger" onClick={toggle}> Update a Recipe </Button>
+        <Button className="buttons" onClick={toggle}> Update a Recipe </Button>
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>

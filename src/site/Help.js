@@ -1,13 +1,20 @@
 import React from "react";
+import './Help.css'
 
 const Help = () => {
     return (
         <div className="main">
-            <h1>About </h1>
+            <div className="helpdiv">
+            </div>
+            <div className="titlediv">
+            <h1>How to Use This Site</h1>
             <p>
-                This website was created for my Mother and I, for us to save and share recipes with each other on the go.<br/>
+                You must be logged in to see the list of recipes; if you do not see recipes then you should see a login screen
             </p>
-            <br />
+            <p>
+                Placeholder Text
+            </p>
+            </div>
         </div>
     );
 }

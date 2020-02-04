@@ -1,5 +1,10 @@
 .sidebar-list-styling{
-    background-color: #7d8491;
+    background-color: hsl(219, 8%, 53%);
+    border-radius: 10px 10px 0px 0px;
+    padding-top: 10px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: large;
 }
 
 #root > div > div.menu.container > div.sidebar-list-styling > ul {

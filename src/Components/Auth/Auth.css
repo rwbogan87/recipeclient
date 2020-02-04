@@ -1,5 +1,8 @@
 .authmain {
     background-color: grey;
-    width: 50vw;
-    height: auto;
+    display: inline-block;
+    width: 20em;
+    border-radius: 10px;
+    padding-bottom: 1em;
+    border: 1px solid darkgreen;
 }

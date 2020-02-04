@@ -1,0 +1,6 @@
+.tabledisplay {
+    background-color: #3f334d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

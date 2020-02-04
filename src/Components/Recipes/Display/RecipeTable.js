@@ -34,19 +34,19 @@ const RecipeTable = (props) => {
     }
 
     useEffect(() => {
-        console.log('runing use effect')
         fetchRecipes()
     }, []);
 
     return recipes.map((recipes) => {
         return(
             <CardBody key={recipes.id}>
-                <CardTitle>{recipes.recipeName}</CardTitle>
                 <CardText>{recipes.id}</CardText>
+                <CardTitle>{recipes.recipeName}</CardTitle>
                 <CardText>{recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
                 <CardText>{recipes.chef}</CardText>
+                <Button color="danger" onClick={() => {deleteRecipe(recipes)}}>Delete</Button>
             </CardBody>
         )
     })

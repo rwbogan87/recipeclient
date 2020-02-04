@@ -17,8 +17,8 @@ const Recipes = (props) => {
                 <br />
                 </div>
             <br />
+                <h1>Recipe Index</h1>
                 <div className="tabledisplay">
-                    <h1>Recipes</h1>
                 <br />
                     <RecipeTable token={props.token} />
                 </div>

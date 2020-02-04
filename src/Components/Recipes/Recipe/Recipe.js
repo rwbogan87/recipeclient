@@ -95,14 +95,14 @@ const ModalCreate = (props) => {
   
     return (
       <div>
-        <Button color="danger" onClick={toggle}> Add a New Recipe! </Button>
+        <Button className="button" onClick={toggle}> Add a New Recipe! </Button>
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>
               <RecipeCreate token={props.token}/>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
+            <Button color="secondary" onClick={toggle}>Close</Button>
           </ModalFooter>
         </Modal>
       </div>
