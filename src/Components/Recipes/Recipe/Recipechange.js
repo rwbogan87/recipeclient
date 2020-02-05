@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Recipe.css'
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import APIURL from '../../../helpers/environment';
@@ -9,7 +9,7 @@ const RecipeCreate = (props) => {
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipePublic, setRecipePublic] = useState(true);
+    const [recipeLock, setRecipeLock] = useState(false);
     const [chef, setChef] = useState('');
     const [recipeId, setRecipeId] = useState('');
 
@@ -24,7 +24,7 @@ const RecipeCreate = (props) => {
                 recipeCategory: recipeCategory,
                 recipeIngredients: recipeIngredients,
                 recipeInstructions: recipeInstructions,
-                recipePublic: recipePublic,
+                recipePublic: recipeLock,
                 chef: chef
             }),
             headers: new Headers({
@@ -39,28 +39,28 @@ const RecipeCreate = (props) => {
             setRecipeCategory('');
             setRecipeIngredients('');
             setRecipeInstructions('');
-            setRecipePublic('');
+            setRecipeLock(false);
             setChef('');
             console.log('recipe successfully updated');
-        })
+        }).then(()=>props.toggle())
     }
     
     return(
         <>
         <div className="maindiv">
-        <h3>Update a Recipe</h3>
+        <h3>Change a Recipe</h3>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipeid"/>
-                <Input name="recipeid" placeholder="Recipe Id" value={recipeId} onChange={(e) => setRecipeId(e.target.value)}/>
+                <Input type="integer" name="recipeid" placeholder="Recipe # (required)" value={recipeId} onChange={(e) => setRecipeId(e.target.value)}/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="recipename"/>
-                <Input name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
+                <Input type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="recipecategory"/>
-                <Input name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
+                <Input type="text" name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
             </FormGroup>
             <FormGroup className="textarea">
                 <Label htmlFor="recipeingredients"/>
@@ -70,21 +70,23 @@ const RecipeCreate = (props) => {
                 <Label htmlFor="recipeinstructions"/>
                 <textarea className="textbox" rows={15} name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
             </FormGroup>
-
+            
+            {/* currently do not want users to be able to update the locked value */}
             {/* <FormGroup>
                 <Label htmlFor="recipepublic"/>
-                <p>make recipe public</p>
-                <Input name="recipepublic" type="checkbox" onChange={() => 
+                <p>Lock Recipe? (can be updated, not deleted)</p>
+                <Input name="recipepublic" type="checkbox" value={recipeLock} onChange={() => 
                     {
-                        setRecipePublic(!recipePublic)
+                        setRecipeLock(!recipeLock)
+                        console.log(recipeLock)
+                        console.log()
                     }}/>
             </FormGroup> */}
-
             <FormGroup>
                 <Label htmlFor="chef"/>
-                <Input name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
+                <Input type="text" name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
             </FormGroup>
-            <Button type="submit">Click to Submit</Button>
+            <Button type="submit" className="modalsubmit">Click to Submit</Button>
         </Form>
         </div>
         </>
@@ -103,10 +105,10 @@ const ModalCreate = (props) => {
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>
-              <RecipeCreate token={props.token}/>
+              <RecipeCreate token={props.token} toggle={toggle}/>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
+            <Button color="secondary" onClick={toggle} >Close</Button>
           </ModalFooter>
         </Modal>
       </div>

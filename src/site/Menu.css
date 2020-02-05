@@ -26,10 +26,17 @@ ul {
 .main {
     margin: 0px;
     padding: 0px;
+    border: 1px solid black;
+    border-top: 0;
 }
 
 .button {
     color: black;
     margin-bottom: 1em;
     padding: 0em;
+}
+
+#root > div > div.menu.container > div.sidebar-list-styling {
+    border: 1px solid black;
+    border-bottom: 0;
 }

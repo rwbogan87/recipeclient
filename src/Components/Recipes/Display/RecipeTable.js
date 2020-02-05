@@ -19,7 +19,6 @@ const RecipeTable = (props) => {
         })
         .then(res => res.json())
         .then(json => {console.log(json); setRecipes(json)})
-        .then(console.log('testpoint 1'))
         .catch(err => console.log(err))
     }
 
@@ -30,9 +29,11 @@ const RecipeTable = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
+            // deletes recipe card then refetches data so it displays on refresh
         }).then(() => fetchRecipes())
     }
 
+    // calls fetchrecipes each time recipetables is called within Recipes
     useEffect(() => {
         fetchRecipes()
     }, []);
@@ -40,15 +41,17 @@ const RecipeTable = (props) => {
     return recipes.map((recipes) => {
         return(
             <Card key={recipes.id}>
-            <CardBody>
+            <CardBody className="bg-image">
                 <CardText>Recipe Number {recipes.id}</CardText>
-                <CardTitle>{recipes.recipeName}</CardTitle>
-                <CardText>{recipes.recipeCategory}</CardText>
+                <CardTitle>Name: {recipes.recipeName}</CardTitle>
+                <CardText>Category: {recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
-                <CardText>{recipes.recipePublic}</CardText>
+                {/* change later to reflect public/locked status */}
+                {/* <CardText>{recipes.recipePublic}</CardText> */}
                 <CardText>Recipe From: {recipes.chef}</CardText>
-                <Button color="danger" onClick={(e) => { if (window.confirm('Are you sure you want to delete this item? This cannot be undone!')) {deleteRecipe(recipes)}}}>Delete</Button>
+                <br/>
+                <Button className="button" onClick={(e) => { if (window.confirm('Are you sure you want to delete this item? This cannot be undone!')) {deleteRecipe(recipes)}}}>Delete</Button>
             </CardBody>
             </Card>
         )

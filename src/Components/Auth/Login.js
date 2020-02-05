@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './Login.css'
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import APIURL from '../../helpers/environment';
 
@@ -22,10 +23,10 @@ const Login = (props) => {
             // (console.log('test point 1')),
         ).then((data) => {
             props.updateToken(data.sessionToken);
-            (console.log('data.sessiontoken is a success'))
         })
     }
 
+    // main login to be displayed if there is no token
     return(
         <div>
             <h1>Login</h1>
@@ -38,7 +39,7 @@ const Login = (props) => {
                     <Label htmlFor="password">Password</Label>
                     <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
                 </FormGroup>
-                <Button type="submit">Login</Button>
+                <Button className="submitbutton" type="submit">Login</Button>
             </Form>
         </div>
     )

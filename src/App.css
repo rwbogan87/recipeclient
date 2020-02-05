@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  background-color: rgb(148, 149, 163);
+  background-image: url(./assets/rustic.jpeg);
   font-family: 'Acme', sans-serif;
   text-shadow: 4px 4px 4px #aaa;
   height: auto;

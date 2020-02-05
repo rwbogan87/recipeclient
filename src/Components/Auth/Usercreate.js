@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import './Usercreate.css'
 import {Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import APIURL from '../../helpers/environment';
 
+// main functions that connect to the form inside the modal
 const Usercreate = (props) => {
     const [firstName, setFirstname] = useState('');
     const [lastName, setLastname] = useState('');
@@ -34,7 +36,7 @@ let handleSubmit = (e) => {
     )
 }
 
-
+    // form that is embedded inside modal
     return(
         <div>
             <h1>Create an Account</h1>
@@ -60,19 +62,19 @@ let handleSubmit = (e) => {
         </div>
     )
 }
-
+// modal disappears on submit since a token turns off Auth and activates Recipes
 const ModalCreate = (props) => {
-  
+    // creates state to be toggled with toggle() that is used by a button and on form submission above
     const [modal, setModal] = useState(false);
-  
-    const toggle = () => setModal(!modal);
-  
+    // fires modal if its off, closes it on submission since it's passed up as props
+    const toggle = () => setModal(!modal);  
     return (
       <div>
-        <Button color="danger" onClick={toggle}> New User </Button>
+        <Button className="userbutton" onClick={toggle}> New User Form </Button>
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Create New User</ModalHeader>
           <ModalBody>
+              {/* above usercreate embedded inside modal here with token passed */}
               <Usercreate updateToken={props.updateToken}/>
           </ModalBody>
           <ModalFooter>

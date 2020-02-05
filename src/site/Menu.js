@@ -8,8 +8,8 @@ import Home from './Home';
 import Help from './Help';
 import {Button, Container} from 'reactstrap';
 import './Menu.css';
-import RecipeTable from '../Components/Recipes/Display/RecipeTable';
 
+// simple menu routes to switch between About and Help without affecting rendered receipes
 const Menu = (props) => {
     return (
         <Container className="menu">

@@ -7,6 +7,7 @@ import Recipes from './Components/Recipes/Recipes';
 import Refresh from './Components/Recipes/Display/Refresh';
 import Navbar from './Components/Navbar/Navbar';
 import Menu from './site/Menu';
+import Footer from './Components/Navbar/Footer'
 
 function App() {
 
@@ -14,36 +15,31 @@ function App() {
 
   const updateToken = (newToken) => {
     localStorage.setItem('token', newToken)
-    console.log(newToken);
     setSessionToken(newToken)
   }
 
+  // on refresh, useeffect grabs localstorage token and uses it, if there is one; prevents token loss
   useEffect(() => {
     if (localStorage.token) {
       setSessionToken(localStorage.token)
-    } else {
-      return null;
-    }
-  }, []);
+    }}, []);
 
-  console.log(typeof sessionToken)
-
+  // logout function
   const clearToken = () => {
     localStorage.clear();
     sessionStorage.clear();
     setSessionToken('');
   }
 
+  // displays recipetable through refresh if there is a token
   const viewConductor=()=>{
     return sessionToken === localStorage.getItem('token') ? <Refresh token={sessionToken} /> : <Auth updateToken={updateToken}/>
   }
 
+  // displays recipe create/change buttons if there is a token to do so
   const buttonView=()=>{
     return sessionToken === '' ? null : <Recipes token={sessionToken} />
   }
-
-  console.log(localStorage.token)
-  console.log(sessionToken)
 
   return (
     <div className="App">
@@ -55,7 +51,9 @@ function App() {
       <br />
       {buttonView()}
       {viewConductor()}
-      <hr/>
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 }

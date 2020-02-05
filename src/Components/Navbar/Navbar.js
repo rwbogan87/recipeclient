@@ -1,17 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Navbar.css';
 import {
   Nav,
   NavItem,
-  Button
 } from 'reactstrap';
 
-function Navbar(props) {
+// Simple title bar, main functionality is inside main splash and menu
+function Navbar() {
     return (
        <Nav color="black">
           <NavItem>
           <h1>Recipe Bible</h1>
-          
           </NavItem>
        </Nav>
    );

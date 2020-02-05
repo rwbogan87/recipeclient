@@ -2,8 +2,6 @@
     background-color: #3f334d;
     color: white;
     height: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
     border: 1px solid black;
     border-radius: 1em;
 }
@@ -11,8 +9,6 @@
 #root > div > div.splashdiv > div.createDiv > div:nth-child(3) > button {
     background-color: #3f334d;
     height: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
     border: 1px solid black;
     border-radius: 1em;
 }

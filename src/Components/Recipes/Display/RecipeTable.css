@@ -1,13 +1,18 @@
+/* individual card styling */
 .card {
-    background-color: rgb(20, 125, 173);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 15%, rgb(71, 52, 93) 51%, rgba(0,0,0,1) 85%);
     width: auto;
     color: black;
     margin-top: 2em;
     color: white;
-    border: 2px solid white;
-    box-shadow: 2px 2px 2px black;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px black;
     border-radius: 1em;
-    background-size: cover;
     width: auto;
-    margin-left: 2em;
+}
+
+/* hover effects */
+.card :hover {
+    background-color: rgba(0, 0, 0, 0.582);
+    border-radius: 1em;
 }

@@ -1,9 +1,10 @@
 import React from 'react';
 import './Auth.css'
-import {Container, Row, Col} from 'reactstrap';
+import {Container} from 'reactstrap';
 import Modalcreate from './Usercreate';
 import Login from './Login';
 
+// calls in both login and the modal inside usercreate
 const Auth = (props) => {
     return(
         <div className="authdiv">

@@ -1,10 +1,10 @@
-import React, { Button } from 'react';
+import React from 'react';
 import './Recipes.css';
 import ModalCreate from './Recipe/Recipe';
 import Recipechange from './Recipe/Recipechange';
 
 
-//displays user CRUD options and calls RecipeTable without further auth to list recipes
+//displays user CRUD options and calls RecipeTable without further auth to list recipes on login or refresh if there is a token
 const Recipes = (props) => {
     return(
         <div className="splashdiv">

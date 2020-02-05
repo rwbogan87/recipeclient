@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import {RadioGroup} from 'react-radio-group';
+import React, { useState } from 'react';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 import './Recipe.css'
 import APIURL from '../../../helpers/environment';
 
+
 //makes a new Recipe inside a form embedded in a modal
 const RecipeCreate = (props) => {
+
+    // const toggle = () => setModal(!modal);
+
     const [recipeName, setRecipeName] = useState('');
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipePublic, setRecipePublic] = useState(true);
+    const [recipeLock, setRecipeLock] = useState(false);
     const [chef, setChef] = useState('');
 
 
@@ -24,7 +27,7 @@ const RecipeCreate = (props) => {
                 recipeCategory: recipeCategory,
                 recipeIngredients: recipeIngredients,
                 recipeInstructions: recipeInstructions,
-                recipePublic: recipePublic,
+                recipePublic: !recipeLock,
                 chef: chef
             }),
             headers: new Headers({
@@ -38,10 +41,14 @@ const RecipeCreate = (props) => {
             setRecipeCategory('');
             setRecipeIngredients('');
             setRecipeInstructions('');
-            setRecipePublic('');
+            setRecipeLock(false);
             setChef('');
+
             console.log('recipe successfully submitted');
-        }).then(() => fetchRecipes())
+        })
+        // props.toggle calls toggle function inside modalcreate to unfire the modal
+        .then(()=>props.toggle())
+        .then(() => fetchRecipes())
     }
 
     const [recipes, setRecipes] = useState([]);
@@ -59,8 +66,6 @@ const RecipeCreate = (props) => {
         .then(console.log('testpoint 1'))
         .catch(err => console.log(err))
     }
-
-    
 
     return(
         <>
@@ -92,10 +97,10 @@ const RecipeCreate = (props) => {
             <FormGroup>
                 <Label htmlFor="recipepublic"/>
                 <p>Lock Recipe? (can be updated, not deleted)</p>
-                <Input name="recipepublic" type="checkbox" value={recipePublic} onChange={() => 
+                <Input name="recipepublic" type="checkbox" value={recipeLock} onChange={() => 
                     {
-                        setRecipePublic(!recipePublic)
-                        console.log(recipePublic)
+                        setRecipeLock(!recipeLock)
+                        console.log(recipeLock)
                         console.log()
                     }}/>
             </FormGroup>
@@ -110,10 +115,9 @@ const RecipeCreate = (props) => {
     )
 }
 
+// same structure as usercreate
 const ModalCreate = (props) => {
-  
     const [modal, setModal] = useState(false);
-  
     const toggle = () => setModal(!modal);
   
     return (
@@ -122,10 +126,11 @@ const ModalCreate = (props) => {
         <Modal isOpen={modal} toggle={toggle} className="creatediv">
           <ModalHeader toggle={toggle}>Chef's Corner</ModalHeader>
           <ModalBody>
-              <RecipeCreate token={props.token} />
+              {/* recipecreate gets passed toggle so it closes modal on form submission */}
+              <RecipeCreate token={props.token} toggle={toggle}/>
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" onClick={toggle}>Close</Button>
+            <Button color="secondary" onClick={toggle} >Close</Button>
           </ModalFooter>
         </Modal>
       </div>
