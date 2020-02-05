@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
 #root > div > div.splashdiv > div.createDiv > div:nth-child(1) > button {
     background-color: #3f334d;
     color: white;
@@ -17,16 +19,17 @@
     border-radius: 1em;
 }
 
-body > div:nth-child(7) > div > div.modal.fade.show > div > div {
+/* body > div:nth-child(7) > div > div.modal.fade.show > div > div {
     background-color: white;
-}
+} */
 
-body > div:nth-child(7) > div > div.modal.fade.show {
+.modal.fade.show {
     margin-top: 10vh;
     height: 80vh;
     width: 80vw;
     margin-left: 10vw;
-    background-color: black;
+    background-color: rgb(138, 124, 121);
+    font-family: 'Acme', sans-serif;
 }
 
 .textarea {

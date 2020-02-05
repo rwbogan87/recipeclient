@@ -96,7 +96,7 @@ const RecipeCreate = (props) => {
             ]} /> */}
             <FormGroup>
                 <Label htmlFor="recipepublic"/>
-                <p>Lock Recipe? (can be updated, not deleted)</p>
+                <p>Lock Recipe? (Can not be deleted! For special entries)</p>
                 <Input name="recipepublic" type="checkbox" value={recipeLock} onChange={() => 
                     {
                         setRecipeLock(!recipeLock)

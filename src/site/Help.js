@@ -12,7 +12,7 @@ const Help = () => {
                 You must be logged in to see the list of recipes; if you do not see recipes then you should see a login screen
             </p>
             <p>
-                You may only delete recipes that were not set to 'locked' upon creation. Want a new backdrop to your list? Refresh the page!<br/>
+                You may only delete recipes that were not set to 'locked' upon creation.<br/>
                 The Recipe Number is required to make an update.
             </p>
             </div>

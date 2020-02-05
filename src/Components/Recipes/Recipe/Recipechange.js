@@ -9,7 +9,7 @@ const RecipeCreate = (props) => {
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipeLock, setRecipeLock] = useState(false);
+    const [recipeLock, setRecipeLock] = useState(true);
     const [chef, setChef] = useState('');
     const [recipeId, setRecipeId] = useState('');
 
@@ -49,6 +49,7 @@ const RecipeCreate = (props) => {
         <>
         <div className="maindiv">
         <h3>Change a Recipe</h3>
+        <p>Note: Empty fields will replace existing data</p>
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipeid"/>

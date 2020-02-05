@@ -13,18 +13,6 @@
     border-radius: 1em;
 }
 
-body > div:nth-child(7) > div > div.modal.fade.show > div > div {
-    background-color: white;
-}
-
-body > div:nth-child(7) > div > div.modal.fade.show {
-    margin-top: 10vh;
-    height: 80vh;
-    width: 80vw;
-    margin-left: 10vw;
-    background-color: black;
-}
-
 .textarea {
     margin-top: 2em;
 }
@@ -33,10 +21,10 @@ body > div:nth-child(7) > div > div.modal.fade.show {
     width: 15em;
 }
 
-body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
+/* body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
     text-align: center;
 }
 
 body > div:nth-child(7) > div > div.modal.fade.show > div > div {
     text-align: center;
-}
+} */
