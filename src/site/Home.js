@@ -9,10 +9,10 @@ const Home = () => {
             <div className="titlediv">
             <h1>Mom and Ryan's Recipes</h1>
             <p>
-                Log in to save your favorite recipes and see ones I add too!
+                Log in to save your favorite recipes and share ones I add too!
             </p>
             <p>
-                I'll be building out other things into this website, break everything!
+                This site is designed to be intuitive.  Have fun!
             </p>
             </div>
         </div>

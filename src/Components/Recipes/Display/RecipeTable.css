@@ -1,10 +1,13 @@
-.card-body {
-border-radius: 1em;
-margin-top: 2em;
-width: 25em;
-color: #574b60;
-background-color: white;
-border: 3px solid black;
-box-shadow: 2px 2px 2px black;
+.card {
+    background-color: rgb(20, 125, 173);
+    width: auto;
+    color: black;
+    margin-top: 2em;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 1em;
+    background-size: cover;
+    width: auto;
+    margin-left: 2em;
 }
-

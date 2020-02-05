@@ -8,9 +8,13 @@ const Auth = (props) => {
     return(
         <div className="authdiv">
         <Container className="authmain">
+            <div className="logindiv">
             <Login updateToken={props.updateToken}/>
+            </div>
             <br />
+            <div className="creatediv">
             <Modalcreate updateToken={props.updateToken}/>
+            </div>
         </Container>
         </div>
     )

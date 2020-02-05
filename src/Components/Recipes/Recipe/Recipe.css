@@ -1,9 +1,41 @@
 #root > div > div.splashdiv > div.createDiv > div:nth-child(1) > button {
     background-color: #3f334d;
+    color: white;
     height: 5em;
+    border: 1px solid black;
 }
 
 #root > div > div.splashdiv > div.createDiv > div:nth-child(3) > button {
     background-color: #3f334d;
     height: 5em;
+    border: 1px solid black;
 }
+
+body > div:nth-child(7) > div > div.modal.fade.show > div > div {
+    background-color: white;
+}
+
+body > div:nth-child(7) > div > div.modal.fade.show {
+    margin-top: 10vh;
+    height: 80vh;
+    width: 80vw;
+    margin-left: 10vw;
+    background-color: black;
+}
+
+.textarea {
+    margin-top: 2em;
+}
+
+.textbox {
+    width: 15em;
+}
+
+body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
+    text-align: center;
+}
+
+body > div:nth-child(7) > div > div.modal.fade.show > div > div {
+    text-align: center;
+}
+

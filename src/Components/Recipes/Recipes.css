@@ -1,6 +1,8 @@
 .tabledisplay {
     background-color: #3f334d;
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    justify-content: space-around;
+    padding-left: 2em;
+    padding-right: 2em;
 }

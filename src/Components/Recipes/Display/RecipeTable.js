@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {CardTitle, CardBody, CardText} from 'reactstrap';
-import {Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import {Card, CardTitle, CardBody, CardText} from 'reactstrap';
+import {Button} from 'reactstrap';
 import './RecipeTable.css';
 import APIURL from '../../../helpers/environment';
 
@@ -39,18 +39,20 @@ const RecipeTable = (props) => {
 
     return recipes.map((recipes) => {
         return(
-            <CardBody key={recipes.id}>
-                <CardText>{recipes.id}</CardText>
+            <Card key={recipes.id}>
+            <CardBody>
+                <CardText>Recipe Number {recipes.id}</CardText>
                 <CardTitle>{recipes.recipeName}</CardTitle>
                 <CardText>{recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
-                <CardText>{recipes.chef}</CardText>
-                <Button color="danger" onClick={() => {deleteRecipe(recipes)}}>Delete</Button>
+                <CardText>{recipes.recipePublic}</CardText>
+                <CardText>Recipe From: {recipes.chef}</CardText>
+                <Button color="danger" onClick={(e) => { if (window.confirm('Are you sure you want to delete this item? This cannot be undone!')) {deleteRecipe(recipes)}}}>Delete</Button>
             </CardBody>
+            </Card>
         )
     })
-
 }
 
 export default RecipeTable;

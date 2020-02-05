@@ -9,15 +9,15 @@ const RecipeCreate = (props) => {
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipePublic, setRecipePublic] = useState('');
+    const [recipePublic, setRecipePublic] = useState(true);
     const [chef, setChef] = useState('');
-    const [id, setId] = useState('');
+    const [recipeId, setRecipeId] = useState('');
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`${APIURL}/recipe/update/${id}`, {
+        fetch(`${APIURL}/recipe/update/${recipeId}`, {
             method: 'PUT',
             body: JSON.stringify({
                 recipeName: recipeName,
@@ -31,10 +31,10 @@ const RecipeCreate = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
-        }).then((res) => res.json())
+        })
         .then((recipeData) => {
             console.log(recipeData);
-            setId('');
+            setRecipeId('');
             setRecipeName('');
             setRecipeCategory('');
             setRecipeIngredients('');
@@ -44,9 +44,7 @@ const RecipeCreate = (props) => {
             console.log('recipe successfully updated');
         })
     }
-
     
-
     return(
         <>
         <div className="maindiv">
@@ -54,7 +52,7 @@ const RecipeCreate = (props) => {
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipeid"/>
-                <Input name="recipeid" placeholder="Recipe Id" value={id} onChange={(e) => setId(e.target.value)}/>
+                <Input name="recipeid" placeholder="Recipe Id" value={recipeId} onChange={(e) => setRecipeId(e.target.value)}/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="recipename"/>
@@ -64,23 +62,23 @@ const RecipeCreate = (props) => {
                 <Label htmlFor="recipecategory"/>
                 <Input name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="textarea">
                 <Label htmlFor="recipeingredients"/>
-                <Input name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
+                <textarea className="textbox" rows={15} name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="textarea">
                 <Label htmlFor="recipeinstructions"/>
-                <Input name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
+                <textarea className="textbox" rows={15} name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
             </FormGroup>
 
-            <FormGroup>
+            {/* <FormGroup>
                 <Label htmlFor="recipepublic"/>
                 <p>make recipe public</p>
                 <Input name="recipepublic" type="checkbox" onChange={() => 
                     {
                         setRecipePublic(!recipePublic)
                     }}/>
-            </FormGroup>
+            </FormGroup> */}
 
             <FormGroup>
                 <Label htmlFor="chef"/>

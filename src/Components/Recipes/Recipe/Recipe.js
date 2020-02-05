@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './Recipe.css'
+import {RadioGroup} from 'react-radio-group';
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import './Recipe.css'
 import APIURL from '../../../helpers/environment';
 
 //makes a new Recipe inside a form embedded in a modal
@@ -9,7 +10,7 @@ const RecipeCreate = (props) => {
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipePublic, setRecipePublic] = useState('');
+    const [recipePublic, setRecipePublic] = useState(true);
     const [chef, setChef] = useState('');
 
 
@@ -40,7 +41,23 @@ const RecipeCreate = (props) => {
             setRecipePublic('');
             setChef('');
             console.log('recipe successfully submitted');
+        }).then(() => fetchRecipes())
+    }
+
+    const [recipes, setRecipes] = useState([]);
+
+    const fetchRecipes = () => {
+        fetch(`${APIURL}/recipe`,{
+            method: 'GET',
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            })
         })
+        .then(res => res.json())
+        .then(json => {console.log(json); setRecipes(json)})
+        .then(console.log('testpoint 1'))
+        .catch(err => console.log(err))
     }
 
     
@@ -52,35 +69,41 @@ const RecipeCreate = (props) => {
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipename"/>
-                <Input name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
+                <Input type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="recipecategory"/>
-                <Input name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
+                <Input type="text" name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="textarea">
                 <Label htmlFor="recipeingredients"/>
-                <Input name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
+                <textarea className="textbox" rows={15} name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
             </FormGroup>
-            <FormGroup>
+            <FormGroup className="textarea">
                 <Label htmlFor="recipeinstructions"/>
-                <Input name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
+                <textarea className="textbox" rows={15} name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
             </FormGroup>
-
+            {/* unable to get working for extra delete security, tabled */}
+            {/* <Label htmlFor="radio"/>
+            <RadioGroup name="recipepublic" onChange={(e) => setRecipePublic(e.target.value)} value={recipePublic} options={[
+                { label: "true", value: true},
+                { label: "false", value: false}
+            ]} /> */}
             <FormGroup>
                 <Label htmlFor="recipepublic"/>
-                <p>make recipe public</p>
-                <Input name="recipepublic" type="checkbox" onChange={() => 
+                <p>Lock Recipe? (can be updated, not deleted)</p>
+                <Input name="recipepublic" type="checkbox" value={recipePublic} onChange={() => 
                     {
                         setRecipePublic(!recipePublic)
+                        console.log(recipePublic)
+                        console.log()
                     }}/>
             </FormGroup>
-
             <FormGroup>
                 <Label htmlFor="chef"/>
-                <Input name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
+                <Input type="text" name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
             </FormGroup>
-            <Button type="submit">Click to Submit</Button>
+            <Button type="submit" className="modalsubmit">Click to Submit</Button>
         </Form>
         </div>
         </>
@@ -96,10 +119,10 @@ const ModalCreate = (props) => {
     return (
       <div>
         <Button className="button" onClick={toggle}> Add a New Recipe! </Button>
-        <Modal isOpen={modal} toggle={toggle}>
-          <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <Modal isOpen={modal} toggle={toggle} className="creatediv">
+          <ModalHeader toggle={toggle}>Chef's Corner</ModalHeader>
           <ModalBody>
-              <RecipeCreate token={props.token}/>
+              <RecipeCreate token={props.token} />
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={toggle}>Close</Button>

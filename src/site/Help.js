@@ -12,7 +12,7 @@ const Help = () => {
                 You must be logged in to see the list of recipes; if you do not see recipes then you should see a login screen
             </p>
             <p>
-                Placeholder Text
+                
             </p>
             </div>
         </div>

@@ -8,13 +8,14 @@ import Home from './Home';
 import Help from './Help';
 import {Button, Container} from 'reactstrap';
 import './Menu.css';
+import RecipeTable from '../Components/Recipes/Display/RecipeTable';
 
 const Menu = (props) => {
     return (
         <Container className="menu">
         <div className="sidebar-list-styling">
             <ul className="sidebar-list list-unstyled">
-                <li><Link to="/Home">Home</Link></li>
+                <li><Link to="/Home">About</Link></li>
                 <li><Link to="/Help">Help</Link></li>
                 <li><Button onClick={props.clickLogout} className="button">Logout</Button></li>
             </ul>
