@@ -40,10 +40,14 @@
     width: 15em;
 }
 
-body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
-    text-align: center;
+.modal.fade.show > div > div > div.modal-header {
+    text-align: center !important;
 }
 
-body > div:nth-child(7) > div > div.modal.fade.show > div > div {
-    text-align: center;
+.modal.fade.show > div > div {
+    text-align: center !important;
+}
+
+.formclass {
+    display: block;
 }
