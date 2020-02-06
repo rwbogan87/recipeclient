@@ -9,6 +9,7 @@ const Recipes = (props) => {
     return(
         <div className="splashdiv">
                 <div className="createDiv">
+                    {/* token called as props to allow users to submit items in the create modal */}
                     <ModalCreate token={props.token} />
                 <br />
                     <Recipechange token={props.token} />

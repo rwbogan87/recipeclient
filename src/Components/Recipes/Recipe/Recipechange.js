@@ -42,7 +42,9 @@ const RecipeCreate = (props) => {
             setRecipeLock(false);
             setChef('');
             console.log('recipe successfully updated');
-        }).then(()=>props.toggle())
+        }) 
+        // toggle function is being passed as props to trigger the modal to close after the fetch resets the form input values and confirms entry
+        .then(()=>props.toggle())
     }
     
     return(
@@ -106,6 +108,7 @@ const ModalCreate = (props) => {
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>
+              {/* toggle function being passed so it can be called in above fetch function */}
               <RecipeCreate token={props.token} toggle={toggle}/>
           </ModalBody>
           <ModalFooter>

@@ -38,6 +38,7 @@ function App() {
 
   // displays recipe create/change buttons if there is a token to do so
   const buttonView=()=>{
+  // token being passed into recipes, which is the file that contains the create modal
     return sessionToken === '' ? null : <Recipes token={sessionToken} />
   }
 
