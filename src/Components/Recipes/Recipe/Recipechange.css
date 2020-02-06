@@ -21,10 +21,10 @@
     width: 15em;
 }
 
-/* body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
+body > div:nth-child(7) > div > div.modal.fade.show > div > div > div.modal-header {
     text-align: center;
 }
 
 body > div:nth-child(7) > div > div.modal.fade.show > div > div {
     text-align: center;
-} */
+}

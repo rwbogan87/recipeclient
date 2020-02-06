@@ -71,7 +71,7 @@ const RecipeCreate = (props) => {
         <>
         <div className="maindiv">
         <h3>Recipe Creation</h3>
-        <Form onSubmit={handleSubmit}>
+        <Form class="formclass" onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipename"/>
                 <Input type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>

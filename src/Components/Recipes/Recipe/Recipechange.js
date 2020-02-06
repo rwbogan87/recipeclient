@@ -50,7 +50,7 @@ const RecipeCreate = (props) => {
         <div className="maindiv">
         <h3>Change a Recipe</h3>
         <p>Note: Empty fields will replace existing data</p>
-        <Form onSubmit={handleSubmit}>
+        <Form className="formclass" onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipeid"/>
                 <Input type="integer" name="recipeid" placeholder="Recipe # (required)" value={recipeId} onChange={(e) => setRecipeId(e.target.value)}/>
