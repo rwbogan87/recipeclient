@@ -1,9 +1,10 @@
 .authmain {
-    background-color: rgb(234,240,206);
+    background-color: rgb(124,114,142);
     width: 20em;
     border-radius: 10px;
     padding-bottom: 1em;
     margin-bottom: 2em;
     border: 1px solid black;
-
+    color: white;
+    text-shadow: 4px 4px 4px black;
 }

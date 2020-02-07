@@ -1,7 +1,6 @@
 /* About / Help / Logout bar */
 .sidebar-list-styling{
     border-radius: 10px 10px 0px 0px;
-    padding-top: 10px;
     padding-left: 10vw;
     padding-right: 10vw;
     font-size: x-large;
@@ -40,7 +39,8 @@ ul {
     margin-bottom: 1em;
     border: none;
     color: white;
-    background-color: rgba(63, 51, 77, 0.671);
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.562);
 }
 
 .menu {
@@ -48,4 +48,5 @@ ul {
     padding-bottom: 1em;
     padding-top: 1em;
     border-radius: 1em;
+    border: 1px solid black;
 }

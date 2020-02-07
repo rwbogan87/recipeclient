@@ -3,10 +3,12 @@
     background-size: cover;
     font-size: 1em;
     height: 10em;
+    position: relative;
     color: white;
 }
 
 .titlediv {
     padding: 0;
+    color: black;
 }
 

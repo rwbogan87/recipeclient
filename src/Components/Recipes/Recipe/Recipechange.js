@@ -9,7 +9,7 @@ const RecipeCreate = (props) => {
     const [recipeCategory, setRecipeCategory] = useState('');
     const [recipeIngredients, setRecipeIngredients] = useState('');
     const [recipeInstructions, setRecipeInstructions] = useState('');
-    const [recipeLock, setRecipeLock] = useState(true);
+    // const [recipeLock, setRecipeLock] = useState(true);
     const [chef, setChef] = useState('');
     const [recipeId, setRecipeId] = useState('');
 
@@ -24,7 +24,7 @@ const RecipeCreate = (props) => {
                 recipeCategory: recipeCategory,
                 recipeIngredients: recipeIngredients,
                 recipeInstructions: recipeInstructions,
-                recipePublic: recipeLock,
+                // recipePublic: recipeLock,
                 chef: chef
             }),
             headers: new Headers({
@@ -39,7 +39,7 @@ const RecipeCreate = (props) => {
             setRecipeCategory('');
             setRecipeIngredients('');
             setRecipeInstructions('');
-            setRecipeLock(false);
+            // setRecipeLock(false);
             setChef('');
             console.log('recipe successfully updated');
         }) 
@@ -104,7 +104,7 @@ const ModalCreate = (props) => {
   
     return (
       <div>
-        <Button className="buttons" onClick={toggle}> Update a Recipe </Button>
+        <Button className="buttons" onClick={toggle}> Change </Button>
         <Modal isOpen={modal} toggle={toggle}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>

@@ -4,14 +4,16 @@
     max-height: 60vh;
     margin-top: 2em;
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
     box-shadow: 3px 3px 3px black;
     border-radius: 1em;
+    background-color: rgba(216, 213, 213, 0.863);
+
 }
 
 /* hover effects */
 .cardBody :hover {
-    background-color: rgba(209, 209, 209, 0.582);
+    background-color: rgba(160, 157, 157, 0.582);
     border-radius: 1em;
 }
 

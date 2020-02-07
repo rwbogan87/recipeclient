@@ -60,8 +60,11 @@ function App() {
       <br />
       {buttonView()}
       {viewConductor()}
-      <br />
-      <br />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <Footer />
     </div>
   );

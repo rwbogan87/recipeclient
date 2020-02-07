@@ -13,7 +13,7 @@ const Help = () => {
             </p>
             <p>
                 You may only delete recipes that were not set to 'locked' upon creation.<br/>
-                The Recipe Number is required to make an update.
+                The Recipe Number is required to make a change.
             </p>
             </div>
         </div>

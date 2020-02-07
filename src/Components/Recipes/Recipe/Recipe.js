@@ -122,7 +122,7 @@ const ModalCreate = (props) => {
   
     return (
       <div>
-        <Button className="button" onClick={toggle}> Add a New Recipe! </Button>
+        <Button className="button" onClick={toggle}> Add </Button>
         <Modal isOpen={modal} toggle={toggle} className="creatediv">
           <ModalHeader toggle={toggle}>Chef's Corner</ModalHeader>
           <ModalBody>
