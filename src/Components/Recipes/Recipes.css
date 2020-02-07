@@ -1,5 +1,5 @@
 .tabledisplay {
-    background-color: rgb(182, 187, 160);
+    background-color: rgba(152, 172, 80, 0.452);
     /* too much area to be covered by a photo */
     /* background-image: url(../../assets/Green.jpeg); */
     /* random photo (reduces visibility) */
@@ -13,5 +13,4 @@
     margin-right: 2em;
     margin-bottom: 3em;
     border: 1px solid black;
-    border-radius: 1em;
 }

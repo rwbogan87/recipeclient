@@ -1,17 +1,19 @@
+/* About / Help / Logout bar */
 .sidebar-list-styling{
-    background-color: hsl(219, 8%, 53%);
     border-radius: 10px 10px 0px 0px;
     padding-top: 10px;
     padding-left: 10vw;
     padding-right: 10vw;
-    font-size: large;
+    font-size: x-large;
 }
 
+/* puts menu bar and photo together */
 #root > div > div.menu.container > div.sidebar-list-styling > ul {
     padding: 0px;
     margin: 0px;
 }
 
+/* cleans up li spacing */
 ul {
     display: flex;
     flex-direction: row;
@@ -19,14 +21,13 @@ ul {
 }
 
 .sidebar-list a{
-    color: white;
+    color: black;
     text-shadow: none;
 }
 
 .main {
     margin: 0px;
-    padding: 0px;
-    border: 1px solid black;
+    padding: 0;
     border-top: 0;
 }
 
@@ -35,13 +36,16 @@ ul {
     padding: 0em;
 }
 
-#root > div > div.menu.container > div.sidebar-list-styling {
-    border: 1px solid black;
-    font-size: x-large;
-}
-
 .logoutbutton {
     margin-bottom: 1em;
     border: none;
-    background-color: rgba(0, 0, 0, 0.102);
+    color: white;
+    background-color: rgba(63, 51, 77, 0.671);
+}
+
+.menu {
+    background-color: rgba(103, 156, 82, 0.876);
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-radius: 1em;
 }
