@@ -2,9 +2,11 @@ import React from 'react';
 import RecipeTable from '../Display/RecipeTable';
 
 const style = {
-   backgroundColor: "rgba(152, 172, 80, 0.9)",
+   backgroundColor: "#513572a1",
    border: "1px solid black",
-   marginBottom: "2em"
+   marginBottom: "2em",
+   color: "white",
+   textShadow: "4px 4px 4px black",
 }
 
 const Refresh = (props) => {

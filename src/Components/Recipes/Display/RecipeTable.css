@@ -1,6 +1,7 @@
 /* individual card styling */
 .card {
     width: auto;
+    max-width: 40vw;
     max-height: 60vh;
     margin-top: 2em;
     color: black;
@@ -24,6 +25,6 @@ button.button.btn.btn-secondary {
     background-color: none;
 }
 
-.buttondiv {
+#root > div > div:nth-child(6) > div.tabledisplay > div:nth-child(2) > div > div > div.buttondiv > button {
     bottom: 0;
 }

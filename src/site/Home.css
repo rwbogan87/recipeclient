@@ -1,10 +1,12 @@
 .homediv{
-    background-image: url(../assets//veggies.jpeg);
-    background-size: cover;
+    background-image: url(../assets//wood2.jpeg);
+    background-size: contain;
     font-size: 1em;
     height: 10em;
-    position: relative;
-    color: white;
+    border: 1px solid black;
+    height: 20vh;
+    border-radius: 1em;
+    opacity: 90%;
 }
 
 .titlediv {

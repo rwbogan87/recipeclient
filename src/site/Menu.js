@@ -14,12 +14,10 @@ import './Menu.css';
 const Menu = (props) => {
     return (
         <Container className="menu">
-        <div className="sidebar-list-styling">
-            <ul className="sidebar-list list-unstyled">
-                <li><Link to="/Home">About</Link></li>
-                <li><Link to="/Help">Help</Link></li>
-                <li className="buttonli"><Button onClick={props.clickLogout} className="logoutbutton">Logout</Button></li>
-            </ul>
+        <div className="menu div">
+            <Link to="/Home" className="li">About</Link>
+            <Link to="/Help" className="li">Help</Link>
+            <Button onClick={props.clickLogout} className="logoutbutton">Logout</Button>
         </div>
         <div className="sidebar-route">
             <Switch>

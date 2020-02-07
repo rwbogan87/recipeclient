@@ -1,52 +1,17 @@
-/* About / Help / Logout bar */
-.sidebar-list-styling{
-    border-radius: 10px 10px 0px 0px;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    font-size: x-large;
-}
-
-/* puts menu bar and photo together */
-#root > div > div.menu.container > div.sidebar-list-styling > ul {
-    padding: 0px;
-    margin: 0px;
-}
-
-/* cleans up li spacing */
-ul {
+.menudiv {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 1em;
+    background-color: white;
+    padding: 1.5em;
+    margin-left: 1.5em;
 }
 
-.sidebar-list a{
-    color: black;
-    text-shadow: none;
-}
-
-.main {
-    margin: 0px;
-    padding: 0;
-    border-top: 0;
-}
-
-.button {
-    color: black;
-    padding: 0em;
+.li {
+    padding-right: 25vw;
 }
 
 .logoutbutton {
-    margin-bottom: 1em;
-    border: none;
-    color: white;
-    border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.562);
-}
-
-.menu {
-    background-color: rgba(103, 156, 82, 0.876);
-    padding-bottom: 1em;
-    padding-top: 1em;
-    border-radius: 1em;
-    border: 1px solid black;
+    margin-top: -0.5em;
 }

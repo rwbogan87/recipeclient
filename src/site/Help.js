@@ -4,10 +4,11 @@ import './Help.css'
 const Help = () => {
     return (
         <div className="main">
+            <br />
             <div className="helpdiv">
             </div>
+            <br />
             <div className="titlediv">
-            <h1>How to Use This App</h1>
             <p>
                 You must be logged in to see the list of recipes; if you do not see recipes then you should see a login screen
             </p>

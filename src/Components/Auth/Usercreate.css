@@ -1,3 +1,7 @@
 .userbutton {
     background-color: rgb(63,51,77);
 }
+
+div.modal.fade.show {
+    background: none;
+}

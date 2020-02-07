@@ -1,11 +1,14 @@
-.main{
-    border-radius: 0px 0px 10px 10px;
-}
-
 .helpdiv{
-    background-image: url(../assets/cleancounter.jpeg);
+    background-image: url(../assets/lavender.jpeg);
     background-size: cover;
     font-size: 1em;
     height: 10em;
-    color: white;
+    border: 1px solid black;
+    height: 20vh;
+    border-radius: 1em;
+    opacity: 90%;
+}
+
+.main{
+    border-radius: 0px 0px 10px 10px;
 }
