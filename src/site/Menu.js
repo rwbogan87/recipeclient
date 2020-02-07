@@ -9,6 +9,7 @@ import Help from './Help';
 import {Button, Container} from 'reactstrap';
 import './Menu.css';
 
+
 // simple menu routes to switch between About and Help without affecting rendered receipes
 const Menu = (props) => {
     return (
@@ -17,7 +18,7 @@ const Menu = (props) => {
             <ul className="sidebar-list list-unstyled">
                 <li><Link to="/Home">About</Link></li>
                 <li><Link to="/Help">Help</Link></li>
-                <li><Button onClick={props.clickLogout} className="button">Logout</Button></li>
+                <li className="buttonli"><Button onClick={props.clickLogout} className="logoutbutton">Logout</Button></li>
             </ul>
         </div>
         <div className="sidebar-route">
@@ -27,6 +28,6 @@ const Menu = (props) => {
             </Switch>
         </div>
         </Container>
-    )}
+)   }
 
     export default Menu;

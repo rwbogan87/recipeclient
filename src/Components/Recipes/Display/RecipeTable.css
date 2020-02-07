@@ -4,14 +4,14 @@
     max-height: 60vh;
     margin-top: 2em;
     color: black;
-    border: 1px solid black;
+    border: 2px solid black;
     box-shadow: 3px 3px 3px black;
     border-radius: 1em;
 }
 
 /* hover effects */
-.card :hover {
-    background-color: rgba(0, 0, 0, 0.582);
+.cardBody :hover {
+    background-color: rgba(209, 209, 209, 0.582);
     border-radius: 1em;
 }
 
@@ -19,4 +19,9 @@ button.button.btn.btn-secondary {
     margin-bottom: 0;
     background-color: rgb(44, 11, 44);
     color: white;
+    background-color: none;
+}
+
+.buttondiv {
+    bottom: 0;
 }

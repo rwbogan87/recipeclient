@@ -26,10 +26,14 @@ function App() {
 
   // logout function
   const clearToken = () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    setSessionToken('');
-  }
+    if (sessionToken === '') {
+      return null;
+    } else {
+      localStorage.clear();
+      sessionStorage.clear();
+      setSessionToken('');
+    }}
+  
 
   // displays recipetable through refresh if there is a token
   const viewConductor=()=>{
@@ -42,12 +46,16 @@ function App() {
     return sessionToken === '' ? null : <Recipes token={sessionToken} />
   }
 
+  const menuView=()=>{
+    return sessionToken === '' ? null : <Menu clickLogout={clearToken}/>
+  }
+
   return (
     <div className="App">
       <Navbar />
       <br />
       <Router>
-        <Menu clickLogout={clearToken} />
+      {menuView()}
       </Router>
       <br />
       {buttonView()}

@@ -11,7 +11,6 @@
     padding: 0px;
     margin: 0px;
 }
-    
 
 ul {
     display: flex;
@@ -20,7 +19,8 @@ ul {
 }
 
 .sidebar-list a{
-    color: black;
+    color: white;
+    text-shadow: none;
 }
 
 .main {
@@ -32,11 +32,16 @@ ul {
 
 .button {
     color: black;
-    margin-bottom: 1em;
     padding: 0em;
 }
 
 #root > div > div.menu.container > div.sidebar-list-styling {
     border: 1px solid black;
-    border-bottom: 0;
+    font-size: x-large;
+}
+
+.logoutbutton {
+    margin-bottom: 1em;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.102);
 }

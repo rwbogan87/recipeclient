@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Card, CardTitle, CardBody, CardText} from 'reactstrap';
+import {Card, CardTitle, CardBody, CardText, CardGroup} from 'reactstrap';
 import {Button} from 'reactstrap';
 import './RecipeTable.css';
 import APIURL from '../../../helpers/environment';
@@ -40,9 +40,10 @@ const RecipeTable = (props) => {
     // when called, maps over recipes (which have been changed by usestate through setRecipes) and assigns the different values to card items that are pieced together to form a `recipe` that gets displayed in the Refresh file with a passed token; Refresh is called in App whenever there is a token, and is auto displayed on app render or page refresh
     return recipes.map((recipes) => {
         return(
-            <Card key={recipes.id}>
-            <CardBody className="cardBody">
-                <CardText>Recipe Number {recipes.id}</CardText>
+        <CardGroup key={recipes.id}className="cardBody">
+            <Card >
+            <CardBody >
+                <CardText># {recipes.id}</CardText>
                 <CardTitle>Name: {recipes.recipeName}</CardTitle>
                 <CardText>Category: {recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
@@ -55,6 +56,7 @@ const RecipeTable = (props) => {
                 </div>
             </CardBody>
             </Card>
+        </CardGroup>
         )
     })
 }
