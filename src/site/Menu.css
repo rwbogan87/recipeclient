@@ -10,6 +10,8 @@
 
 .li {
     padding-right: 25vw;
+    margin-left: 1em;
+    color: black;
 }
 
 .logoutbutton {

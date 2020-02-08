@@ -11,6 +11,7 @@ function Navbar() {
        <Nav color="black">
           <NavItem>
           <h1>Recipe Bible</h1>
+          <h3>(Site Under Construction)</h3>
           </NavItem>
        </Nav>
    );

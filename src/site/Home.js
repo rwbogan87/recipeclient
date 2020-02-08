@@ -10,7 +10,7 @@ const Home = () => {
             <div className="titlediv">
             <br />
             <p>
-                Click 'Add a New Recipe' to get started!
+                This site serves as a landing zone for all those recipes lying around on note cards.  Get them on here and lock the special ones!
             </p>
             <br />
             <br />

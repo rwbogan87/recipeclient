@@ -64,13 +64,13 @@ const RecipeTable = (props) => {
         <CardGroup key={recipes.id}className="cardBody">
             <Card >
             <CardBody >
-                <CardText>{recipes.id}</CardText>
-                <CardTitle><b>{recipes.recipeName}</b></CardTitle>
+                <CardText>{recipes.recipeName}, # {recipes.id}</CardText>
+                {/* <CardTitle><b>{recipes.recipeName}</b></CardTitle> */}
                 <CardText>Category: {recipes.recipeCategory}</CardText>
                 <CardText>{recipes.recipeIngredients}</CardText>
                 <CardText>{recipes.recipeInstructions}</CardText>
                 {/* change later to reflect public/locked status */}
-                <CardText>Creator: {recipes.chef}</CardText>
+                <CardText>A {recipes.recipeCategory} by{recipes.chef}</CardText>
                 <div className="buttondiv">
                 {buttondisplay()}
                 </div>

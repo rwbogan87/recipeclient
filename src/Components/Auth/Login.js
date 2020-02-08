@@ -33,11 +33,11 @@ const Login = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor="email">Email Address</Label>
-                    <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email" value={email}/>
+                    <Input required onChange={(e) => setEmail(e.target.value)} type="email" name="email" value={email}/>
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="password">Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
+                    <Input required onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password}/>
                 </FormGroup>
                 <Button className="submitbutton" type="submit">Login</Button>
             </Form>

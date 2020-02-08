@@ -74,19 +74,19 @@ const RecipeCreate = (props) => {
         <Form className="formclass" onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor="recipename"/>
-                <Input type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
+                <Input required={true} type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="recipecategory"/>
-                <Input type="text" name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
+                <Input required={true} type="text" name="recipecategory" placeholder="Recipe Category" value={recipeCategory} onChange={(e) => setRecipeCategory(e.target.value)}/>
             </FormGroup>
             <FormGroup className="textarea">
                 <Label htmlFor="recipeingredients"/>
-                <textarea className="textbox" rows={15} name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
+                <textarea required={true} maxLength="250" className="textbox" rows={15} name="recipeingredients" placeholder="Recipe Ingredients" value={recipeIngredients} onChange={(e) => setRecipeIngredients(e.target.value)}/>
             </FormGroup>
             <FormGroup className="textarea">
                 <Label htmlFor="recipeinstructions"/>
-                <textarea className="textbox" rows={15} name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
+                <textarea required={true} maxLength="250" className="textbox" rows={15} name="recipeinstructions" placeholder="Recipe Instructions" value={recipeInstructions} onChange={(e) => setRecipeInstructions(e.target.value)}/>
             </FormGroup>
             {/* unable to get working for extra delete security, tabled */}
             {/* <Label htmlFor="radio"/>
@@ -106,7 +106,7 @@ const RecipeCreate = (props) => {
             </FormGroup>
             <FormGroup>
                 <Label htmlFor="chef"/>
-                <Input type="text" name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
+                <Input required={true} type="text" name="chef" placeholder="Your Chef Name" value={chef} onChange={(e) => setChef(e.target.value)}/>
             </FormGroup>
             <Button type="submit" className="modalsubmit">Click to Submit</Button>
         </Form>

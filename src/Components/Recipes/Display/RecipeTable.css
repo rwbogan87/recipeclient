@@ -1,8 +1,7 @@
 /* individual card styling */
 .card {
     width: auto;
-    max-width: 40vw;
-    max-height: 60vh;
+    max-width: 80vw;
     margin-top: 2em;
     color: black;
     border: 1px solid black;
