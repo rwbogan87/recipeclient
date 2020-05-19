@@ -3,14 +3,8 @@
     background-size: contain;
     font-size: 1em;
     height: 10em;
-    border: 1px solid black;
     height: 20vh;
-    border-radius: 1em;
     opacity: 90%;
 }
 
-.titlediv {
-    padding: 0;
-    color: black;
-}
 

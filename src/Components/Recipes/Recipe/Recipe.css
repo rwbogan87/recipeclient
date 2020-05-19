@@ -1,31 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
 
-#root > div > div.splashdiv > div.createDiv > div:nth-child(1) > button {
-    background-color: #513572a1;
-    color: white;
-    height: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    border: 1px solid black;
-    font-size: large;
-    border-radius: 1em;
-}
-
-#root > div > div.splashdiv > div.createDiv > div:nth-child(3) > button {
-    background-color: #513572a1;
-    color: white;
-    height: 5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    border: 1px solid black;
-    border-radius: 1em;
-    font-size: large;
-
-}
-
 /* body > div:nth-child(7) > div > div.modal.fade.show > div > div {
     background-color: white;
 } */
+
+.addchange {
+    background-color: black;
+    
+}
 
 .modal.fade.show {
     margin-top: 10vh;

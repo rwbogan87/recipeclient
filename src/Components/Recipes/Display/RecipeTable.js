@@ -8,10 +8,11 @@ import pic from '../../../assets/bonfire.jpeg'
 //fetches all recipes and displays them in cards over in Recipes.js
 const RecipeTable = (props) => {
 
-    const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState(['']);
+    const [recipeCategory, setRecipeCategory] = useState(['']);
 
     const fetchRecipes = () => {
-        fetch(`${APIURL}/recipe`,{
+        fetch(`${APIURL}/recipe/${recipeCategory}`,{
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

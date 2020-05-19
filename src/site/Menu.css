@@ -1,19 +1,31 @@
 .menudiv {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-top: 1em;
-    background-color: white;
-    padding: 1.5em;
-    margin-left: 1.5em;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .li {
-    padding-right: 25vw;
-    margin-left: 1em;
     color: black;
 }
 
-.logoutbutton {
-    margin-top: -0.5em;
+.li:hover {
+    background: none;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    color: Blue;
+}
+
+#logoutbutton {
+    background: none;
+    color: black;
+    border: none;
+}
+
+#logoutbutton:hover {
+    background: none;
+    font-weight: bold;
+    border: none;
+    color: Red;
 }
