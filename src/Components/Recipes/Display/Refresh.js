@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import RecipeTable from '../Display/RecipeTable';
 import './Refresh.css';
 
@@ -7,9 +7,10 @@ const style = {
    color: "black"
 }
 
-
-
 const Refresh = (props) => {
+
+    const [sort, setSort] = useState(['']);
+
     return(
         <div className="splashdiv">
             <br/>
@@ -18,7 +19,7 @@ const Refresh = (props) => {
             <div className="sort">
             <span>Sort</span>
             <div className="sort-content">
-                <p>Breakfast</p>
+                {/* <p value={sort} onClick={(e) => setSort(e.target.value)}><span>Breakfast</span></p> */}
                 <p>Lunch</p>
             </div>
             </div>

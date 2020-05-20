@@ -1,20 +1,21 @@
 /* individual card styling */
-.card {
-    width: auto;
-    max-width: 80vw;
-    margin-top: 2em;
+.cardCard {
+    width: 50vw;
+    max-width: 50vw;
     color: black;
-    border: 1px solid black;
-    box-shadow: 3px 3px 3px black;
-    border-radius: 1em;
-    background-color: rgba(216, 213, 213, 0.863);
-
+    border: 1px solid rgb(128, 128, 128);
+    background-color: rgba(21, 61, 94, 0.479);
 }
 
 /* hover effects */
-.cardBody :hover {
-    background-color: rgba(160, 157, 157, 0.582);
-    border-radius: 1em;
+.cardGroup :hover {
+    background-color: rgba(76, 158, 235, 0.582);
+    cursor: pointer;
+}
+
+.cardBody {
+    background-color: white;
+    height: auto;
 }
 
 button.button.btn.btn-secondary {
@@ -26,4 +27,28 @@ button.button.btn.btn-secondary {
 
 #root > div > div:nth-child(6) > div.tabledisplay > div:nth-child(2) > div > div > div.buttondiv > button {
     bottom: 0;
+}
+
+.recipeName {
+    position: absolute;
+    left: 0;
+}
+
+.recipeCategory {
+    position: absolute;
+    right: 0;
+}
+
+.recipeFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttondiv {
+    display: flex;
+}
+
+.cardHeader {
+    height: auto;
 }

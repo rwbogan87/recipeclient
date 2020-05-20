@@ -20,11 +20,12 @@ const RecipeCreate = (props) => {
         fetch(`${APIURL}/recipe/update/${recipeId}`, {
             method: 'PUT',
             body: JSON.stringify({
+                recipeId: recipeId,
                 recipeName: recipeName,
                 recipeCategory: recipeCategory,
                 recipeIngredients: recipeIngredients,
                 recipeInstructions: recipeInstructions,
-                // recipePublic: recipeLock,
+                // recipePublic: recipePublic,
                 chef: chef
             }),
             headers: new Headers({
@@ -34,7 +35,7 @@ const RecipeCreate = (props) => {
         })
         .then((recipeData) => {
             console.log(recipeData);
-            setRecipeId('');
+            // setRecipeId('');
             setRecipeName('');
             setRecipeCategory('');
             setRecipeIngredients('');
@@ -53,10 +54,10 @@ const RecipeCreate = (props) => {
         <h3>Change a Recipe</h3>
         <p>Note: Empty fields will replace existing data</p>
         <Form className="formclass" onSubmit={handleSubmit}>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label htmlFor="recipeid"/>
                 <Input type="integer" name="recipeid" placeholder="Recipe # (required)" value={recipeId} onChange={(e) => setRecipeId(e.target.value)}/>
-            </FormGroup>
+            </FormGroup> */}
             <FormGroup>
                 <Label htmlFor="recipename"/>
                 <Input type="text" name="recipename" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName(e.target.value)}/>
@@ -96,7 +97,7 @@ const RecipeCreate = (props) => {
     )
 }
 
-const ModalCreate = (props) => {
+const ModalChange = (props) => {
   
     const [modal, setModal] = useState(false);
   
@@ -119,4 +120,4 @@ const ModalCreate = (props) => {
     );
   }
 
-export default ModalCreate;
+export default ModalChange;
